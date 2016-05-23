@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
   var fs    = require('fs');
   
-  grunt.registerMultiTask('prepend', 'Appends or prepends files with text', function() {
+  grunt.registerMultiTask('gruntPrepend', 'Appends or prepends files with text', function() {
 
     var options = this.options({
       content   : ''
@@ -39,7 +39,20 @@ module.exports = function(grunt) {
         fs.write(fd, data + "\n" + options.content);
         fs.close(fd);
       }
-      
+
+      else if($this.target=='concat') {
+
+        var concat = '';
+
+        if(!options.fileOut) {
+          grunt.fail.fatal('No output file for concat');
+        } else {
+          f.src.forEach(function (src) {
+            concat += grunt.file.read(src);
+          });
+        }
+        grunt.file.write(options.fileOut, concat);
+      }
     });
   });
 };

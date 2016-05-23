@@ -1,6 +1,11 @@
 # grunt-prepend
 
-> It's really simple. This plugin just Appends or Prepends files with text. I find it useful to add comments above files after they've been compiled. Example is if you decide to compile less files to the style.css file in a WordPress theme directory
+> This grunt task has 3 methods
+ > append - appends to file
+ > prepend - prepends to file
+ > concat - concatenates an array of files
+
+I find it useful to insert comments to files after they've been compiled. Example is if you decide to compile less files to the style.css file in a WordPress theme directory
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
@@ -38,7 +43,9 @@ var appendThis  = '/* \n' +
 
 
 grunt.initConfig({
-    prepend: {
+    gruntPrepend: {
+
+        // Prepend Method
         prepend : {
             options: {
                 content: prependThis
@@ -47,6 +54,8 @@ grunt.initConfig({
                 src     : '../../style.css'
             }]
         },
+
+        // Append Method
         append : {
             options : {
                 content: appendThis
@@ -55,10 +64,20 @@ grunt.initConfig({
                 src     : '../../style.css'
             }]
         }
+
+        // Simple concatenate files
+        concat: {
+            options: {
+                fileOut: 'output.txt'
+            },
+            src: [
+                'test1.txt', 'test2.txt', 'test3.txt'
+            ]
+        }
     }
 });
 
 grunt.loadNpmTasks('grunt-prepend');
-grunt.registerTask('default', ['prepend']);
+grunt.registerTask('default', ['gruntPrepend']);
 
 ```

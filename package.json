@@ -1,7 +1,7 @@
 {
   "name": "grunt-prepend",
   "description": "Appends or prepends files with text",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "",
   "author": {
     "name": "bambattajb",
@@ -10,9 +10,6 @@
   "repository": {
     "type": "git",
     "url": "''"
-  },
-  "bugs": {
-    "url": ""
   },
   "licenses": [
     {
@@ -34,5 +31,30 @@
   },
   "keywords": [
     "grunt-prepend"
-  ]
+  ],
+  "_id": "grunt-prepend@0.1.0",
+  "_shasum": "5f8f3ba105de9e75a83246c6db6051dd031b4043",
+  "_from": "grunt-prepend@latest",
+  "_npmVersion": "2.15.1",
+  "_nodeVersion": "4.4.4",
+  "_npmUser": {
+    "name": "bambattajb",
+    "email": "joe@white-fire.co.uk"
+  },
+  "dist": {
+    "shasum": "5f8f3ba105de9e75a83246c6db6051dd031b4043",
+    "tarball": "https://registry.npmjs.org/grunt-prepend/-/grunt-prepend-0.1.0.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "bambattajb",
+      "email": "joe@white-fire.co.uk"
+    }
+  ],
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/grunt-prepend-0.1.0.tgz_1463411873868_0.12947523687034845"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/grunt-prepend/-/grunt-prepend-0.1.0.tgz"
 }
