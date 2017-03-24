@@ -1,7 +1,7 @@
 {
   "name": "grunt-prepend",
   "description": "Appends or prepends files with text",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "",
   "author": {
     "name": "bambattajb",
