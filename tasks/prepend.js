@@ -15,16 +15,17 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('gruntPrepend', 'Appends or prepends files with text', function() {
 
     var options = this.options({
-      content   : ''
+      content   : '',
+      type      : 'prepend'
     }),
         $this = this;
 
     this.files.forEach(function (f) {
-      var file    = __dirname + '/../../../' + f.src[0],
+      var file    = f.src[0],
           data,
           fd;
       
-      if($this.target=='prepend') {
+      if(options.type=='prepend') {
         data  = fs.readFileSync(file);
         fd    = fs.openSync(file, 'w+');
         var buffer = new Buffer(options.content + '\n');
@@ -33,14 +34,14 @@ module.exports = function(grunt) {
         fs.close(fd);
       }
 
-      else if($this.target=='append') {
+      else if(options.type=='append') {
         data    = fs.readFileSync(file);
         fd      = fs.openSync(file, 'w+');
         fs.write(fd, data + "\n" + options.content);
         fs.close(fd);
       }
 
-      else if($this.target=='concat') {
+      else if(options.type=='concat') {
 
         var concat = '';
 
@@ -56,3 +57,4 @@ module.exports = function(grunt) {
     });
   });
 };
+
